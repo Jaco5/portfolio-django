@@ -1,3 +1,46 @@
-{% block page_content %}
-<h1>This is the base template</h2>
-{% endblock %}
+<!doctype html>
+<html lang="en">
+    
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Title of Page</title>
+<meta name="description" content="This page is about...">
+</head>
+
+<body style="background-color:black;color:orange;">
+
+
+<pre> ██████   █  █ █  ████     █████ ████  ███  █  █
+    █    █ █ █ █  █          █   █    █   █ █  █
+    ▓   ▓  ▓ ▓▓   ▓▓▓  ▓▓▓   ▓   ▓▓▓  ▓     ▓▓▓▓
+ ▒  ▒  ▒ ▒▒▒ ▒ ▒  ▒          ▒   ▒▒   ▒   ▒ ▒  ▒
+  ░░   ░   ░ ░  ░ ░░░░       ░   ░░░░  ░░░  ░  ░</pre>
+
+<nav class="nav">
+    <div class="container">
+        <a href="{% url 'splash' %}">Home</a>
+        
+
+        <div>
+          <ul>
+            <li>
+              <a href="{% url 'project_index' %}">Projects</a>
+            </li>
+            <li>
+              <a href="{% url 'blog_index' %}">Blog</a>
+            </li>
+          </ul>
+        </div>
+    </div>
+
+</nav>
+
+<div class="base-container">
+    {% block page_content %}{% endblock %}
+</div>
+<footer><pre style="font-size: .25rem;">   █ ▄▀▄ █▄▀ ██▀ █▄ ▄█ ▄▀▄ ▀█▀ █ ▄▀▀   ▀█▀ ██▀ ▄▀▀ █▄█ █▄ █ █ ▄▀▀ ▄▀▄ █     █▀▄ █▀▄ ▄▀▄ █▀▄ █ █ ▄▀▀ ▀█▀ ▄▀▀   █ █ ▄▀▀ ▄▀▄
+ ▀▄█ █▀█ █ █ █▄▄ █ ▀ █ █▀█  █  █ ▀▄▄    █  █▄▄ ▀▄▄ █ █ █ ▀█ █ ▀▄▄ █▀█ █▄▄   █▀  █▀▄ ▀▄▀ █▄▀ ▀▄█ ▀▄▄  █  ▄██   ▀▄█ ▄██ █▀█</pre>
+</footer>
+</body>
+</html>
