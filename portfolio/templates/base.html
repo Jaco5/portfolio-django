@@ -5,10 +5,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Title of Page</title>
+<style>
+    a:link { color: orange; text-decoration: none; }
+    a:visited { color: darkorange; text-decoration: none; }
+    a:hover { color: green; text-decoration: none; }
+    .grid-container { display: grid; grid-template-columns: 6% 10% 7%; }<!-- 2% over word length -->
+</style>
 <meta name="description" content="This page is about...">
 </head>
 
-<body style="background-color:black;color:orange;">
+<body style="background-color:black; color:orange; font-family: monospace;">
 
 
 <pre> ██████   █  █ █  ████     █████ ████  ███  █  █
@@ -17,29 +23,22 @@
  ▒  ▒  ▒ ▒▒▒ ▒ ▒  ▒          ▒   ▒▒   ▒   ▒ ▒  ▒
   ░░   ░   ░ ░  ░ ░░░░       ░   ░░░░  ░░░  ░  ░</pre>
 
-<nav class="nav">
-    <div class="container">
-        <a href="{% url 'splash' %}">Home</a>
-        
-
-        <div>
-          <ul>
-            <li>
-              <a href="{% url 'project_index' %}">Projects</a>
-            </li>
-            <li>
-              <a href="{% url 'blog_index' %}">Blog</a>
-            </li>
-          </ul>
-        </div>
-    </div>
-
+<nav class="nav, grid-container">
+    <a class="grid-item" href="{% url 'splash' %}"><pre style="font-size:.25rem;"> █▄█ ▄▀▄ █▄ ▄█ ██▀
+ █ █ ▀▄▀ █ ▀ █ █▄▄
+</pre></a>
+    <a  class="grid-item" href="{% url 'project_index' %}"><pre style="font-size:.25rem;"> █▀▄ █▀▄ ▄▀▄   █ ██▀ ▄▀▀ ▀█▀ ▄▀▀
+ █▀  █▀▄ ▀▄▀ ▀▄█ █▄▄ ▀▄▄  █  ▄██
+</pre></a>
+    <a  class="grid-item" href="{% url 'blog_index' %}"><pre style="font-size: .25rem;"> ██▄ █   ▄▀▄ ▄▀ 
+ █▄█ █▄▄ ▀▄▀ ▀▄█
+</pre></a>
 </nav>
 
 <div class="base-container">
     {% block page_content %}{% endblock %}
 </div>
-<footer><pre style="font-size: .25rem;">   █ ▄▀▄ █▄▀ ██▀ █▄ ▄█ ▄▀▄ ▀█▀ █ ▄▀▀   ▀█▀ ██▀ ▄▀▀ █▄█ █▄ █ █ ▄▀▀ ▄▀▄ █     █▀▄ █▀▄ ▄▀▄ █▀▄ █ █ ▄▀▀ ▀█▀ ▄▀▀   █ █ ▄▀▀ ▄▀▄
+<footer><pre style="border-top:.1rem solid; padding-top: .4rem; font-size: .25rem;">   █ ▄▀▄ █▄▀ ██▀ █▄ ▄█ ▄▀▄ ▀█▀ █ ▄▀▀   ▀█▀ ██▀ ▄▀▀ █▄█ █▄ █ █ ▄▀▀ ▄▀▄ █     █▀▄ █▀▄ ▄▀▄ █▀▄ █ █ ▄▀▀ ▀█▀ ▄▀▀   █ █ ▄▀▀ ▄▀▄
  ▀▄█ █▀█ █ █ █▄▄ █ ▀ █ █▀█  █  █ ▀▄▄    █  █▄▄ ▀▄▄ █ █ █ ▀█ █ ▀▄▄ █▀█ █▄▄   █▀  █▀▄ ▀▄▀ █▄▀ ▀▄█ ▀▄▄  █  ▄██   ▀▄█ ▄██ █▀█</pre>
 </footer>
 </body>
