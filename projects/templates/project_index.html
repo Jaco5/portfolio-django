@@ -6,13 +6,10 @@
 {% for project in projects %}
     <div>
         <div>
-            <img src="{% static project.image %}">
+<!--            <img src="{% static project.image %}">-->
             <div>
-                <h5>{{ project.title }}</h5>
+                <h3><a href="{% url 'project_detail' project.pk %}">{{ project.title }}</a></h3>
                 <p>{{ project.description }}</p>
-                <a href="{% url 'project_detail' project.pk %}">
-                    Read More
-                </a>
             </div>
         </div>
     </div>
