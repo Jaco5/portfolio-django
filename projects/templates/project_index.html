@@ -1,11 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_content %}
-<h1>Projects</h1>
+<pre>▒█▀▄▒█▀▄░▄▀▄░░▒█▒██▀░▄▀▀░▀█▀░▄▀▀
+░█▀▒░█▀▄░▀▄▀░▀▄█░█▄▄░▀▄▄░▒█▒▒▄██
+</pre>
 <div>
 {% for project in projects %}
     <div>
         <div>
+
 <!--            <img src="{% static project.image %}">-->
             <div>
                 <h3><a href="{% url 'project_detail' project.pk %}">{{ project.title }}</a></h3>
